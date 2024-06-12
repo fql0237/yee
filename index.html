@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心理測驗</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>心理測驗</h1>
+        <div id="start">
+            <button id="startButton">開始測驗</button>
+        </div>
+        <div id="question" style="display: none;"></div>     
+        <div id="options"></div>
+
+        <div id="finish" style="display: none;">
+            <h2>測驗結束</h2>
+            <p>您已完成所有問題，請點擊下方按鈕查看結果：</p>
+            <button id="viewResultButton">查看結果</button>
+        </div>
+        
+        <div id="result" style="display: none;">
+            <h2 id="resultHeader">測驗結束</h2>
+            <p id="resultText"></p>
+            <button id="resultButton" style="display: none;">查看結果</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

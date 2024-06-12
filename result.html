@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測驗結果</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>你的測驗結果</h1>
+        <p>根據你的測驗結果，你是：</p>
+        <p id="score"></p>
+        <img id="resultImage" src="" alt="測驗結果圖片">
+        <p id="resultText"></p>
+        <button id="restartButton">重新開始測驗</button>
+    </div>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const resultIndex = urlParams.get('result');
+        const resultTextElement = document.getElementById("resultText");
+        const resultImageElement = document.getElementById("resultImage");
+        const result = [
+            { text: "你是原神玩家!!", image: "p/result/result1.jpg" },
+            { text: "You are Gay!", image: "p/result/result2.jpg" },
+            { text: "你是一個喜歡在吃披薩時配汽水的人", image: "p/result/result3.jpg" },
+            { text: "你是一個喜歡在吃披薩時配檸檬紅茶的人", image: "p/result/result4.jpg" },
+            { text: "你是一個喜歡在吃披薩時配水的人，你很健康", image: "p/result/result5.png" },
+            { text: "你沒有吃過披薩", image: "p/result/result6.png" },
+            { text: "你是人類", image: "p/result/result7.jpg" },
+        ];
+
+        resultTextElement.textContent = result[resultIndex].text;
+        resultImageElement.src = result[resultIndex].image;
+
+        document.getElementById("restartButton").addEventListener("click", function() {
+            window.location.href = "index.html"; 
+        });
+    </script>
+</body>
+</html>
